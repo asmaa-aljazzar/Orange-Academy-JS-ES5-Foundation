@@ -1,119 +1,45 @@
-const inventory = {
-    product1: {
-        id: 1,
-        name: "Laptop",
-        price: 800,
-        category: "Electronics",
-        quantity: 10
-    },
+//* Create a function that calculates the square of a number.
+// function square (num){
+//     return num * num;
+// }
 
-    product2: {
-        id: 2,
-        name: "Keyboard",
-        price: 50,
-        category: "Electronics",
-        quantity: 25
-    },
+// const square = (num) => num * num;
 
-    product3: {
-        id: 3,
-        name: "Mouse",
-        price: 30,
-        category: "Electronics",
-        quantity: 40,
-    },
+//*  Create a function that checks whether a number is even.
+// function isEven (num){
+//     return num % 2 === 0;
+// }
 
-    product4: {
-        id: 4,
-        name: "Monitor",
-        price: 250,
-        category: "Electronics",
-        quantity: 15
-    },
+const isEven = (num) => num % 2 === 0;
 
-    product5: {
-        id: 5,
-        name: "Headphones",
-        price: 75,
-        category: "Accessories",
-        quantity: 20
-    },
+//* Create a function that calculates the total price of products.
+let prices = [10, 5, 3, 1, 20, 25, 27, 29, 30, 40, 55];
 
-    product6: {
-        id: 6,
-        name: "Backpack",
-        price: 45,
-        category: "Bags",
-        quantity: 30
-    },
+// function total (prices){
+//     let res = 0;
+//     for (let price of prices)
+//         res += price;
+//     return res;
+// }
 
-    product7: {
-        id: 7,
-        name: "Notebook",
-        price: 5,
-        category: "Stationery",
-        quantity: 100,
-    },
+//? Use map, filter, reduce
+// const newPrices = (prices) =>
+// {
+//     return prices.map ((price) => price - (price * 0.10))
+// }
+// console.log(newPrices (prices));
 
-    product8: {
-        id: 8,
-        name: "Desk Lamp",
-        price: 35,
-        category: "Home",
-        quantity: 18
-    },
-
-    product9: {
-        id: 9,
-        name: "USB Cable",
-        price: 10,
-        category: "Accessories",
-        quantity: 50
-    },
-
-    product10: {
-        id: 10,
-        name: "Webcam",
-        price: 60,
-        category: "Electronics",
-        quantity: 12
-    }
-};
+// const total = (prices) => {
+//      return prices.reduce ((acc, cur) => acc + cur, 0)
+// }
+// console.log(total (prices));
 
 
-//? To use sort we should convert it to Array. 
-// const products = Object.values(inventory);
-// products.sort((a, b) => a.id - b.id);
+// let evenPrices = (prices) => {
+//     return prices.filter(num => isEven(num))
+// }
+// console.log(evenPrices(prices));
 
-//? See if a product have an available category 
-// const avilableCategories = products.map((product) => product.category);
-// console.log(avilableCategories.includes(products[0].category));
 
-//? Use splice() to remove a discontinued product.
-// const discounted = products.splice (6, 1);
-// console.log("discounted:", discounted);
 
-//? Use slice() to display the first five products.
-// const firstFive = products.slice(1, 6);
-// console.log("First Five: " + firstFive);
 
-//? Use concat() to merge two inventories
-// const newInventory = [
-//     {
-//         id: 10,
-//         name: "cam",
-//         price: 60,
-//         category: "Electronics",
-//         quantity: 12
-//     },
-//     {
-//         id: 10,
-//         name: "cam2",
-//         price: 60,
-//         category: "Electronics",
-//         quantity: 12
-//     },
-// ];
-
-// const allProducts = products.concat(newInventory);
-// console.log(allProducts);

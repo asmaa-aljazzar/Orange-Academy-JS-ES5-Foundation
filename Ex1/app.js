@@ -1,50 +1,34 @@
-"use strict"
+// Analyze and fix the following code:
 
-try {
-    //! ReferenceError: x is not defined
-    x = 20;
-
-    //! TypeError: Cannot assign to read only property 'name' of object '#<Object>'
-    const person = {};
-    Object.defineProperty (person, "name", {
-        writable: false
-    });
-    person.name = "Asmaa";
-
-    //! SyntaxError: Delete of an unqualified identifier in strict mode.
-    let x = 10;
-    delete x;
-
-} catch (error) {
-    if (error.name === "ReferenceError"
-       || error.name === "TypeError"
-       || error.name === "SyntaxError")
-        console.error(error.message);
+var name = "Jone";
+console.log(name);
+function test() {
+    var x = 10;
+    if (true) {
+        var y = 20;
+    }
+    console.log(x);
+    console.log(y);
 }
+test();
 
-//? Explain the difference between strict and non-strict mode.
-//* non-strict | strict.
-// Assign to undeclared variable => Creates global variable | ReferenceError.
-// Change read-only property => Fails scilently | TypeError.
-// Delete non-configurable property | TypeError.
-// Dublicate parameters names => Allowed | Not allowed.
-// [this] in normal function => Global object ([window] in browser) | Not allowed.
-// Some octal syntax => Allowed | Not allowed
-// [eval] behaviour => More permissive | More restricted
+// ● Predict the output before running the code.
+//* undefined for name variable/ 20 for y/ x will give an errro
+// ● Explain how hoisting works with var.
+//* JS will rigister all declaration at the start of the program giving undefined with var.
+// ● Identify the difference between function scope and block scope.
+//* block scope like if statement allows var to access variables inside them but function scope doesn't
+// ● Rewrite the example using let where appropriate.
 
-
-
-
-
-
-
-
-
-//? Object.defineProperty()
-//* To create or modify a property of an object with precise control over how that property behaves.
-// Object.defineProperty(user, "name", {
-//     value: "Asmaa",
-//     writable: false,
-//     enumerable: true,
-//     configurable: false
-// });
+let name2 = "Jone";
+console.log (name2);
+function test (){
+    let x = 10;
+    if (true)
+    {
+        let y = 20;
+        console.log(y);
+    }
+    console.log(x);
+}
+test ();
